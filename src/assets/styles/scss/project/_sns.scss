@@ -1,0 +1,29 @@
+@use "../foundation"as *;
+
+.p-sns {
+    margin-bottom: 100px;
+    @include mq-target(sm) {
+        margin-bottom: vw(140px,1920);
+    }
+    &__inner {
+        // background: transparent;
+        // border: none;
+        // filter: drop-shadow(0);
+    }
+    &__list {
+        margin: auto;
+        @include flex($align:center, $justify:space-between);
+        justify-content: center;
+        margin-top: 20px;
+        width: min(vwsp(320px),700px);
+        @include mq-target(sm) {
+            margin-top: 2.57143vw;
+            width: min(vwpc(520px),600px);
+        }
+    }
+
+    &__item {
+        width: 49%;
+        margin: 0 10px;
+    }
+}
