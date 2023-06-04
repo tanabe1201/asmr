@@ -1,5 +1,35 @@
 "use strict";
 
+var sliderWrap = document.querySelectorAll('.js-slider-wrap');
+var sliderThumb = document.querySelectorAll('.js-slider-thumb');
+var sliderMain = document.querySelectorAll('.js-slider-main');
+
+for (var i = 0; i < sliderWrap.length; i++) {
+  var num = ('00' + (i + 1)).slice(-2);
+  sliderWrap[i].className += num;
+  sliderThumb[i].className += num;
+  sliderMain[i].className += num;
+  var swiperThumb = new Swiper('.js-slider-thumb' + num, {
+    slidesPerView: 'auto'
+  });
+  var prev = sliderWrap[i].querySelector('.js-slider-btnPrev');
+  var next = sliderWrap[i].querySelector('.js-slider-btnNext');
+  var swiperMain = new Swiper('.js-slider-main' + num, {
+    slidesPerView: 'auto',
+    effect: 'slide',
+    grabCursor: true,
+    touchEventsTarget: true,
+    loopAdditionalSlides: 1,
+    navigation: {
+      nextEl: next,
+      prevEl: prev
+    },
+    thumbs: {
+      swiper: swiperThumb
+    }
+  });
+}
+
 var modalSwiper = new Swiper('.js-modal-slider', {
   slidesPerView: 'auto',
   centeredSlides: true,
@@ -26,10 +56,6 @@ $('.js-modal-close').on('click', function () {
   $('.l-modal').fadeOut();
   $('body').removeClass('is-lock');
 });
-$('.js-modal-close').on('click', function () {
-  $('.l-modal').fadeOut();
-  $('body').removeClass('is-lock');
-});
 var swiper03 = new Swiper('.p-chara__slider', {
   // loop: true,
   // grabCursor: true,
@@ -49,44 +75,4 @@ $(".js-chara-tab").on("click", function () {
   $('.p-chara__item--tab').removeClass('is-active');
   $(this).addClass('is-active');
   swiper03.slideTo($(this).attr("data-num"));
-});
-$(function () {
-  //swiper 768以下で起動
-  var elmIndexSwiper = document.querySelectorAll('.js-index-slider');
-  var elmIndexBtnP = document.querySelectorAll('.js-slider-btnPrev');
-  var elmIndexBtnN = document.querySelectorAll('.js-slider-btnNext');
-  var swiper;
-  $(window).on('load resize', function () {
-    var w = $(window).width();
-
-    if (w <= 768) {
-      if (swiper) {
-        return;
-      } else {
-        if (elmIndexSwiper.length > 0) {
-          for (var i = 0; i < elmIndexSwiper.length; i++) {
-            elmIndexSwiper[i].className += i;
-            elmIndexBtnP[i].className += i;
-            elmIndexBtnN[i].className += i;
-            var swiper = new Swiper('.js-index-slider' + i, {
-              loop: true,
-              slidesPerView: "auto",
-              centeredSlides: true,
-              initialSlide: 0,
-              grabCursor: true,
-              navigation: {
-                prevEl: '.js-slider-btnPrev' + i,
-                nextEl: '.js-slider-btnNext' + i
-              }
-            });
-          }
-        }
-      }
-    } else {
-      if (swiper) {
-        swiper.destroy();
-        swiper = undefined;
-      }
-    }
-  });
 });

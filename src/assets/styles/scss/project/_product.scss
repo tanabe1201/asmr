@@ -2,130 +2,122 @@
 
 .p-product {
     position: relative;
-    z-index: 10;
-
-
+    z-index: 50000;
 
     &__inner {
+
+        // min-height: 1200px;
         & .c-sec__ttl {
             // margin-bottom: 0
         }
     }
 
+    &__wrap {
+        
+        @include mq-target(sm) {
+            max-width: min(82%, 700px);
+            margin: 0 auto 0;
+        }
+    }
 
     &__list {
-        &--card {
-            @include mq-target(sm) {
-                @include column4(32%);
-            }
-        }
+        margin-top: vwsp(30px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq-target(sm) {
+        margin-top: -30px;
+        padding: 60px 0 20px;
+    }
     }
 
     &__item {
+        margin-top: vwsp(14px);
         position: relative;
-        &:not(:first-child) {
-        //   margin-top: 40px;
+        overflow: hidden;
+        
+        
+        @include mq-target(sm) {
+            margin-top: 20px;
+            width: 49%;   
         }
 
-        &Inner {
-            width: min(vwsp(260px),520px);
-            margin: auto;
 
-            @include mq-target(sm) {
-                width: 100%;
-            }
-        }
-
-        &--card {
-            width: 100%;
-            padding-top: 30px;
-            padding-bottom: 10px;
-            transition: all .4s;
-    
-            @include mq-target(sm) {
-                width: 48%;
-            }
-    
-            @include mq-target(md) {
-                width: 32%;
-            }
-
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
-    }
-
-    &__img {
-        position: relative;
-    }
-
-    &__details {
-        padding: 0px 4%;
-        text-align: left;
-
-        dt {
-            font-size: min(vwsp(12px), 18px);
-            text-transform: uppercase;
-            @include mq-target(sm) {
-                font-size: min(vwpc(10px), 14px);
-            }
-
-        }
-
-        dd {
+        .js-acc--trigger {
+            background-image: url(../../assets/images/acc.png);
+            background-size: 100% 100%;
+            cursor: pointer;
             position: relative;
-            font-size: min(vwsp(12px), 16px);
-            height: 30px;
-            @include flex($align:center);
-            padding-left: 34px;
-
-            border-bottom: 1px solid $color-grey-dark-1;
-
+            @include flex($align:center, $justify:space-between);
+            padding: vwsp(10px) vwsp(16px);
             @include mq-target(sm) {
-                font-size: min(vwpc(10px), 14px);
+              padding: 10px 16px;
             }
-
-            &::before {
-                content: "";
-                display: block;
-                background: $color-green-light-2;
-                @include absolute($top:4px, $left:0);
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
+                      
+            .p-faq__btn {
+                margin-left: auto;
             }
+          }
+    }
 
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                @include absolute($top:10px, $left:5px);
-                width: 10px;
-                height: 5px;
-                border-left: 2px solid $color-white;
-                border-bottom: 2px solid $color-white;
-                transform: rotate(-45deg);
+    &-slider {
+        border: 3px solid $color-key-2;
+    background-color: #d0d0d0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+
+    &-thumb {
+        &__list {
+            margin-top: vwsp(20px);
+            justify-content: space-between;
+            @include mq-target(sm) {
+                margin-top: 48px;
             }
+        }
 
-            & .-price {
-                padding-left: 6px;
-                font-size: 1.2rem;
-            }
-
-
-
-            &:first-of-type {
-                color: $color-key-2;
-                margin: 10px 0 0;
-                font-weight: bold;
-            }
-
-            &:last-of-type {
-                border: none;
+        &__item {
+            border: 2px solid $color-key-2;
+            cursor: pointer;
+            background-color: #d0d0d0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            width: 24%;
+            @include mq-target(sm) {
+                border: 3px solid $color-key-2;
+                width: 22.4%;
             }
         }
     }
+
+
+    &-acc {
+
+        &__list {
+            @include column4(32%);
+        }
+
+        &__item {
+            margin-top: vwsp(20px);
+            border: 2px solid $color-key-2;
+            width: 32%;
+            @include mq-target(sm) {
+                margin-top: 20px;
+            }
+        }
+
+
+        &__ttl {
+            font-size: vwsp(14px);
+            @include mq-target(sm) {
+                font-size: 18px;
+            }
+            // position: absolute;
+            @include absCenter;
+        }
+
+    }
+
 }
 
 

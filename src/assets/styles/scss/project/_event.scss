@@ -1,0 +1,107 @@
+@use "../foundation"as *;
+
+.p-event {
+  &__ttl {
+    position: relative;
+    font-size: vwsp(20px);
+    line-height: 1.2;
+    font-family: $shippo;
+    padding: vwsp(4px) 0 vwsp(16px);
+    background-image: linear-gradient(to right, $color-key-2, #d3c272);
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 0.8rem rgb(232, 191, 104));
+    will-change: filter;
+    transform: translateZ(0);
+    
+    @include mq-target(sm) {
+      font-size: min(vwpc(42px), 48px);
+      padding: 0 0 30px;
+    }
+
+    &::before {
+      content: "";
+      opacity: 0.45;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: $color-key-2;
+    }
+  }
+
+  &__list {
+    @include mq-target(sm) {
+      margin: 12px 0 64px;
+    }
+  }
+
+  &__item {
+    text-align: left;
+
+    &:not(:first-child) {
+      dl {
+        border-top: 1px dashed rgba($color: $color-key-2, $alpha: 0.5);
+      }
+    }
+
+    &:last-child {
+      dl {
+        border-bottom: 1px dashed rgba($color: $color-key-2, $alpha: 0.5);
+      }
+    }
+
+    dl {
+      filter: drop-shadow(2px 2px 2px #000);
+      font-size: vwsp(12px);
+      dt {
+        padding: 4.51042vw 0 0;
+        color: $color-key-2;
+      }
+
+      dd {
+        padding: 2.60417vw 0 4.51042vw;
+      }
+    }
+
+    @include mq-target(sm) {
+      dl {
+        filter: none;
+        padding: 24px 0;
+        display: flex;
+        font-size: 18px;
+        dt {
+          padding: 0;
+          flex-basis: min(180px, 22vw);
+        }
+        dd {
+          padding: 0;
+        }
+      }
+    }
+
+  }
+
+  &__map {
+  
+    @include mq-target(sm) {
+      width: 76%;
+    }
+    &Inner {
+      position: relative;
+      border: 2px solid $color-key-2;
+      padding-top: 62.5%;
+      margin: 3.90625vw 0 0;
+      @include mq-target(sm) {
+        margin-top: 20px;
+        padding-top: 44.94332%;
+      }
+    }
+    
+    .map {
+        @include absAll;
+    }
+  }
+
+}

@@ -10,7 +10,7 @@
       margin-top: 30px;
       
       @include mq-target(sm) {
-        padding: 0 2vw;
+        // padding: 0 2vw;
         max-width: fit-content;
       }
     }
@@ -40,7 +40,7 @@
         @include flex($align:center, $justify:space-between);
         padding: 15px;
         @include mq-target(sm) {
-          padding: 14px 16px;
+          padding: 10px 16px;
         }
   
 

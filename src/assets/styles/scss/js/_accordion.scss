@@ -18,7 +18,8 @@
       }
 
       .js-acc--answer {
-        max-height: 150px;
+        // max-height: 150px;
+        max-height: vwsp(150px);
         @include mq-target(lg) {
           max-height: vw(150px,1920);
         }

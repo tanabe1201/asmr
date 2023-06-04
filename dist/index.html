@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -31,9 +26,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link href="./assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
-  <link href="./assets/styles/style.css" rel="stylesheet">
-
+  <link href="./assets/styles/vendors/magnific-popup.css" rel="stylesheet">
+  <link href="./assets/styles/style.min.css" rel="stylesheet">
+  <script>
+    (function (d) {
+      var config = {
+          kitId: 'zae0uij',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h = d.documentElement,
+        t = setTimeout(function () {
+          h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout),
+        tk = d.createElement("script"),
+        f = false,
+        s = d.getElementsByTagName("script")[0],
+        a;
+      h.className += " wf-loading";
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+          Typekit.load(config)
+        } catch (e) {}
+      };
+      s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
 </head>
+
+
+
 
 <nav class="l-drawer__content js-draw--content">
 
@@ -91,7 +119,7 @@
     <div class="l-modal__inner">
         <div class="c-sec__inner l-modal__area">
             <div class="c-modal js-modal">
-                <div class="swiper p-chara-slider js-slider-main js-modal-slider">
+                <div class="swiper p-chara-slider js-modal-slider">
                     <ul class="swiper-wrapper p-chara-slider__list">
                         <li class="swiper-slide p-chara-slider__item--slide">
                             <div class="p-chara-content__inner">
@@ -101,7 +129,7 @@
                                             <img src="./assets/images/charaBg_04.jpg" alt="">
                                         </figure>
                                     </li>
-                                    <li class="p-chara-content__item p-chara-content__item--line">
+                                    <li class="u-dp-pc--sm p-chara-content__item p-chara-content__item--line">
                                         <p>「ここにセリフが入ります。」</p>
                                     </li>
                                     <li class="p-chara-content__item p-chara-content__item--chara">
@@ -172,7 +200,7 @@
                                             <img src="./assets/images/charaBg_04.jpg" alt="">
                                         </figure>
                                     </li>
-                                    <li class="p-chara-content__item p-chara-content__item--line">
+                                    <li class="u-dp-pc--sm p-chara-content__item p-chara-content__item--line">
                                         <p>「ここにセリフが入ります。」</p>
                                     </li>
                                     <li class="p-chara-content__item p-chara-content__item--chara">
@@ -252,8 +280,11 @@
     </div>
 </div>
 
-<main class="l-main">
 
+
+
+<main class="l-main">
+    <div class="c-sec__bg"></div>
     <section id="keyvisual" class="p-kv inview onload">
         <div class="p-kv__inner">
             <div class="p-kv__catch">
@@ -311,16 +342,13 @@
         </div>
     </header> -->
 
-    <section class="c-sec p-event inview js-scroll--fadeUp">
-        <div class="c-sec__inner">
+    <section class="c-sec p-event">
+        <div class="c-sec__inner p-event__inner">
             <div class="c-sec__ttl">
-                <h2>
-                    <img src="./assets/images/ttl_event.png" alt="イベント">
-                </h2>
-                <p>
-                    開催概要
-                </p>
+                <h2><span class="">EVENT</span></h2>
+                <p>開催概要</p>
             </div>
+
 
             <h3 class="p-event__ttl">
                 『メイドさんと添い寝CD』<br />
@@ -331,40 +359,47 @@
             <ul class="p-event__list">
                 <li class="p-event__item">
                     <dl>
-                        <dt>Event - イベント</dt>
-                        <dd>『メイドさんと添い寝CD』2nd ANNIVERSARY FAIR.</dd>
+                        <dt>公園名</dt>
+                        <dd>2nd ANNIVERSARY FAIR.</dd>
                     </dl>
                 </li>
                 <li class="p-event__item">
                     <dl>
-                        <dt>Venue - 開催場所</dt>
-                        <dd>秋葉原○○カフェ メインホール</dd>
-                    </dl>
-                </li>
-                <li class="p-event__item">
-                    <dl>
-                        <dt>limited - 開催期間</dt>
+                        <dt>開催期間</dt>
                         <dd>
                             2023年1月1日（日）～ 2023年2月1日（日）
                         </dd>
                     </dl>
                 </li>
+
                 <li class="p-event__item">
                     <dl>
-                        <dt>About - 開催内容</dt>
-                        <dd>
-                            秋葉原カフェでのコラボカフェイベントが開催決定！<br />多数グッズを取り揃えてお待ちしております。
+                        <dt>開催場所</dt>
+                        <dd class="p-event__map">
+                            秋葉原○○カフェ&nbsp;メインホール<br />
+                            最寄り駅&nbsp;秋葉原駅から徒歩約5分
+                            <div class="p-event__mapInner">
+                                <iframe class="map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.1314398171276!2d139.77088301545086!3d35.69838298019037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea7e2f93329%3A0x158f36257ff597b1!2z56eL6JGJ5Y6f6aeF!5e0!3m2!1sja!2sjp!4v1677552630454!5m2!1sja!2sjp"
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                         </dd>
                     </dl>
                 </li>
-
-
-
+                <li class="p-event__item">
+                    <dl>
+                        <dt>開催内容</dt>
+                        <dd>
+                            秋葉原カフェでのコラボカフェイベントが開催決定！<br class="u-dp-pc--sm" />多数グッズを取り揃えてお待ちしております。
+                        </dd>
+                    </dl>
+                </li>
             </ul>
-            <figure class="p-event__img">
+            <!-- <figure class="p-event__img">
                 <img src="./assets/images/about_01.jpg" alt="">
-            </figure>
-<!-- 
+            </figure> -->
+            <!-- 
             <div class="c-sec__points">
                 <h4>
 
@@ -390,39 +425,44 @@
                 </a>
             </div>
         </div>
+
+
+
     </section>
 
     <section id="chara" class="c-sec p-chara inview js-scroll--fadeUp">
 
-
-        <div class="c-sec__inner p-chara__inner inview js-slider-wrap">
-
+        <div class="c-sec__inner p-chara__inner inview">
             <div class="c-sec__ttl">
-                <h2>
-                    <img src="./assets/images/ttl_about.png" alt="メイドさんと添い寝CDとは">
-                </h2>
-                <p>
-                    メイドさんと添い寝CDとは
-                </p>
+                <h2><span class="inview js-scroll--slideView-delay">ABOUT</span></h2>
+                <p>メイドさんと添い寝CDとは</p>
             </div>
 
             <div class="p-chara__wrap">
+                <div class="p-chara__bg">
+                    <img src="./assets/images/message.png" alt="" class="js-rellax" data-rellax-speed="1"
+                        data-rellax-percentage="0.5">
+                </div>
                 <p class="p-chara__txt">
-
+                    メイドさんと添い寝CDとは
                     癒し系のボイス作品です。<br />
-                    キャラクターのボイスに耳かきやシャンプー音などのASMR要素を加えてリスナーに癒しを与えます。
+
                 </p>
                 <p class="p-chara__txt">
-                    本作品はひょんなことからメイドリフレで働くことになった主人公が<br />
+                    ボイスに耳かきやシャンプー音などのASMR要素を加えて<br />リスナーに癒しを与えます。
+                </p>
+                <p class="p-chara__txt">
+                    本作品はメイドリフレで働くことになった主人公が<br class="u-dp-pc--sm" />
                     耳かきで癒しを与えるシチュエーション音声作品です。
                 </p>
             </div>
 
 
-
-
+            <h3 class="p-chara__ttl">
+                CAST
+            </h3>
             <ul class="p-chara-staff__list">
-                <li class="p-chara-staff__item js-modal-open js-scroll--slideView-delay inview">
+                <li class="p-chara-staff__item js-modal-open inview js-scroll--turn">
                     <figure class="p-chara-staff__img">
                         <picture>
                             <img src="./assets/images/chara_01.webp" alt="キャラクター01">
@@ -433,11 +473,9 @@
                             </svg>
                         </p>
                     </figure>
-                    <p class="p-chara-staff__name">
-                        山田はなこ
-                    </p>
+
                 </li>
-                <li class="p-chara-staff__item js-modal-open js-scroll--slideView-delay inview">
+                <li class="p-chara-staff__item js-modal-open inview js-scroll--turn">
                     <figure class="p-chara-staff__img">
                         <picture>
                             <img src="./assets/images/chara_02.webp" alt="キャラクター02">
@@ -448,250 +486,181 @@
                             </svg>
                         </p>
                     </figure>
-                    <p class="p-chara-staff__name">
-                        オーナー
-                    </p>
+
                 </li>
-                <li class="p-chara-staff__item js-scroll--slideView-delay inview">
+                <li class="p-chara-staff__item inview js-scroll--turn">
                     <figure class="p-chara-staff__img">
                         <picture>
-                            <img src="./assets/images/chara_03.webp" alt="キャラクター03">
+                            <img src="./assets/images/chara_03.webp" alt="キャラクター02">
                         </picture>
+                        <p class="p-chara-staff__focus">
+                            <svg>
+                                <use xlink:href="./assets/images/sprite.svg#icon-play2"></use>
+                            </svg>
+                        </p>
                     </figure>
-                    <p class="p-chara-staff__name">
-                        未定
-                    </p>
+
                 </li>
-                <li class="p-chara-staff__item js-scroll--slideView-delay inview">
-                    <figure class="p-chara-staff__img">
-                        <picture>
-                            <img src="./assets/images/chara_03.webp" alt="キャラクター03">
-                        </picture>
-                    </figure>
-                    <p class="p-chara-staff__name">
-                        未定
-                    </p>
-                </li>
-                <li class="p-chara-staff__item js-scroll--slideView-delay inview">
-                    <figure class="p-chara-staff__img">
-                        <picture>
-                            <img src="./assets/images/chara_03.webp" alt="キャラクター03">
-                        </picture>
-                    </figure>
-                    <p class="p-chara-staff__name">
-                        未定
-                    </p>
-                </li>
-                <li class="p-chara-staff__item js-scroll--slideView-delay inview">
-                    <figure class="p-chara-staff__img">
-                        <picture>
-                            <img src="./assets/images/chara_03.webp" alt="キャラクター03">
-                        </picture>
-                    </figure>
-                    <p class="p-chara-staff__name">
-                        未定
-                    </p>
-                </li>
+
+
             </ul>
-
-
-            <div class="c-sec__btn">
-                <a href="#" class="">
-                    詳しくはこちら
-                </a>
-            </div>
 
         </div>
     </section>
 
-
-
     <section class="c-sec p-product inview js-scroll--fadeUp">
         <div class="c-sec__inner p-product__inner">
             <div class="c-sec__ttl">
-                <h2>
-                    <img src="./assets/images/ttl_goods.png" alt="コラボグッズ">
-                </h2>
-                <p>
-                    コラボグッズ
-                </p>
+                <h2><span class="inview js-scroll--slideView-delay">GOODS</span></h2>
+                <p>コラボグッズ</p>
+            </div>
+            <div class="p-product__wrap js-slider-wrap">
+                <div class="swiper p-product-slider js-slider-main">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <img src="./assets/images/goods_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="./assets/images/goods_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="./assets/images/goods_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="./assets/images/goods_01.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-product-thumb js-slider-thumb">
+                    <ul class="swiper-wrapper p-product-thumb__list">
+                        <li class="swiper-slide p-product-thumb__item">
+                            <img src="./assets/images/goods_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-product-thumb__item">
+                            <img src="./assets/images/goods_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-product-thumb__item">
+                            <img src="./assets/images/goods_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-product-thumb__item">
+                            <img src="./assets/images/goods_01.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-
             <ul class="p-product__list">
-
-                <li class="p-product__item">
-                    <div class="swiper c-slider__main js-index-slider">
-                        <ul class="c-slider__list p-novelty__list--card swiper-wrapper">
-                            <li class="swiper-slide p-product__item--card">
-                                <div class="c-sec__item p-product__itemInner">
-                                    <figure class="p-product__img">
-                                        <img src="./assets/images/goods_01.jpg" alt="コンテンツ画像">
-                                    </figure>
-                                    <div class="c-sec__details">
-                                        <dl class="p-product__details">
-                                            <dt>
-                                                【イベント限定取り扱い商品】
-                                            </dt>
-                                            <dd>
-                                                ￥550[tax-in]
-                                            </dd>
-                                            <dd>
-                                                2周年記念グッズ
-                                            </dd>
-                                            <dd>
-                                                限定販売
-                                            </dd>
-
-                                        </dl>
-                                        <a href="#" class="c-button">購入はこちら</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide p-product__item--card">
-                                <div class="c-sec__item p-product__itemInner">
-                                    <figure class="p-product__img">
-                                        <img src="./assets/images/goods_01.jpg" alt="コンテンツ画像">
-                                    </figure>
-                                    <div class="c-sec__details">
-                                        <dl class="p-product__details">
-                                            <dt>
-                                                【イベント限定取り扱い商品】
-                                            </dt>
-                                            <dd>
-                                                ￥550[tax-in]
-                                            </dd>
-                                            <dd>
-                                                2周年記念グッズ
-                                            </dd>
-                                            <dd>
-                                                限定販売
-                                            </dd>
-                                        </dl>
-                                        <a href="#" class="c-button">購入はこちら</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide p-product__item--card">
-                                <div class="c-sec__item p-product__itemInner">
-                                    <figure class="p-product__img">
-                                        <img src="./assets/images/goods_01.jpg" alt="コンテンツ画像">
-                                    </figure>
-                                    <div class="c-sec__details">
-                                        <dl class="p-product__details">
-                                            <dt>
-                                                【イベント限定取り扱い商品】
-                                            </dt>
-                                            <dd>
-                                                ￥550[tax-in]
-                                            </dd>
-                                            <dd>
-                                                2周年記念グッズ
-                                            </dd>
-                                            <dd>
-                                                限定販売
-                                            </dd>
-                                        </dl>
-                                        <a href="#" class="c-button">購入はこちら</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                <li class="p-product__item js-acc--content">
+                    <div class="js-acc--trigger is-active">
+                        <h3 class="p-product-acc__ttl">記念イラスト</h3>
+                        <div class="p-faq__btn js-acc--btn"></div>
                     </div>
-                    <div class="u-dp-sp--sm">
-                        <div class="swiper-button-prev c-slider__btnPrev js-slider-btnPrev"></div>
-                        <div class="swiper-button-next c-slider__btnNext js-slider-btnNext"></div>
+                    <div class="js-acc--answer">
+                        <div class="p-product-acc__body">
+                            <ul class="p-product-acc__list">
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_02.jpg">
+                                        <img src="./assets/images/goods_02.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_01.jpg">
+                                        <img src="./assets/images/goods_01.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_02.jpg">
+                                        <img src="./assets/images/goods_02.jpg" alt="">
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
                 </li>
-
-                <li class="p-product__item">
-                    <div class="swiper c-slider__main js-index-slider">
-                        <ul class="c-slider__list p-novelty__list--card swiper-wrapper">
-                            <li class="swiper-slide p-product__item--card">
-                                <div class="c-sec__item p-product__itemInner">
-                                    <figure class="p-product__img">
-                                        <img src="./assets/images/goods_02.jpg" alt="コンテンツ画像">
-                                    </figure>
-                                    <div class="c-sec__details">
-                                        <dl class="p-product__details">
-                                            <dt>
-                                                【イベント限定取り扱い商品】
-                                            </dt>
-                                            <dd>
-                                                ￥550[tax-in]
-                                            </dd>
-                                            <dd>
-                                                2周年記念グッズ
-                                            </dd>
-                                            <dd>
-                                                限定販売
-                                            </dd>
-
-                                        </dl>
-                                        <a href="#" class="c-button">購入はこちら</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide p-product__item--card">
-                                <div class="c-sec__item p-product__itemInner">
-                                    <figure class="p-product__img">
-                                        <img src="./assets/images/goods_02.jpg" alt="コンテンツ画像">
-                                    </figure>
-                                    <div class="c-sec__details">
-                                        <dl class="p-product__details">
-                                            <dt>
-                                                【イベント限定取り扱い商品】
-                                            </dt>
-                                            <dd>
-                                                ￥550[tax-in]
-                                            </dd>
-                                            <dd>
-                                                2周年記念グッズ
-                                            </dd>
-                                            <dd>
-                                                限定販売
-                                            </dd>
-                                        </dl>
-                                        <a href="#" class="c-button">購入はこちら</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide p-product__item--card">
-                                <div class="c-sec__item p-product__itemInner">
-                                    <figure class="p-product__img">
-                                        <img src="./assets/images/goods_02.jpg" alt="コンテンツ画像">
-                                    </figure>
-                                    <div class="c-sec__details">
-                                        <dl class="p-product__details">
-                                            <dt>
-                                                【イベント限定取り扱い商品】
-                                            </dt>
-                                            <dd>
-                                                ￥550[tax-in]
-                                            </dd>
-                                            <dd>
-                                                2周年記念グッズ
-                                            </dd>
-                                            <dd>
-                                                限定販売
-                                            </dd>
-                                        </dl>
-                                        <a href="#" class="c-button">購入はこちら</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                <li class="p-product__item js-acc--content">
+                    <div class="js-acc--trigger is-active">
+                        <h3 class="p-product-acc__ttl">タペストリー</h3>
+                        <div class="p-faq__btn js-acc--btn"></div>
                     </div>
-                    <div class="u-dp-sp--sm">
-                        <div class="swiper-button-prev c-slider__btnPrev js-slider-btnPrev"></div>
-                        <div class="swiper-button-next c-slider__btnNext js-slider-btnNext"></div>
+                    <div class="js-acc--answer">
+                        <div class="p-product-acc__body">
+                            <ul class="p-product-acc__list">
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_01.jpg">
+                                        <img src="./assets/images/goods_01.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_02.jpg">
+                                        <img src="./assets/images/goods_02.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_01.jpg">
+                                        <img src="./assets/images/goods_01.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </li>
+                <li class="p-product__item js-acc--content">
+                    <div class="js-acc--trigger is-active">
+                        <h3 class="p-product-acc__ttl">記念イラスト</h3>
+                        <div class="p-faq__btn js-acc--btn"></div>
+                    </div>
+                    <div class="js-acc--answer">
+                        <div class="p-product-acc__body">
+                            <ul class="p-product-acc__list">
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_02.jpg">
+                                        <img src="./assets/images/goods_02.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_01.jpg">
+                                        <img src="./assets/images/goods_01.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_02.jpg">
+                                        <img src="./assets/images/goods_02.jpg" alt="">
+                                    </a>
+                                </li>
 
-
-
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="p-product__item js-acc--content">
+                    <div class="js-acc--trigger is-active">
+                        <h3 class="p-product-acc__ttl">タペストリー</h3>
+                        <div class="p-faq__btn js-acc--btn"></div>
+                    </div>
+                    <div class="js-acc--answer">
+                        <div class="p-product-acc__body">
+                            <ul class="p-product-acc__list">
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_01.jpg">
+                                        <img src="./assets/images/goods_01.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_02.jpg">
+                                        <img src="./assets/images/goods_02.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li class="p-product-acc__item">
+                                    <a href="./assets/images/goods_01.jpg">
+                                        <img src="./assets/images/goods_01.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
             </ul>
-
             <div class="c-sec__btn">
                 <a href="#" class="">
                     詳しくはこちら
@@ -739,55 +708,45 @@
         </div>
     </section> -->
 
-
     <section id="camp" class="c-sec inview js-scroll--fadeUp">
 
         <div class="c-sec__inner p-camp__inner">
-
             <div class="c-sec__ttl">
-                <h2>
-                    <img src="./assets/images/heading_mid_04.png" alt="">
-                </h2>
-                <p>
-                    キャンペーン概要
-                </p>
+                <div class="c-sec__ttl">
+                    <h2><span class="inview js-scroll--slideView-delay">campaign</span></h2>
+                    <p>キャンペーン</p>
+                </div>
             </div>
-            
 
-                <!-- <h2 class="p-camp__ttl">
-                    <img src="./assets/images/ww02.webp" alt="説明テキスト02">
-                </h2> -->
-                <p class="p-camp__txt">
-                    クーポン番号を購入画面で入力、以下の特典が付与されます。<br />
-                    大変お得なこの機会をぜひお見逃しなく！
-                </p>
-                <ul class="p-feature__list">
-                    <li class="p-feature__item">
 
-                        <div class="p-feature__img">
-                            <picture>
-                                <img src="./assets/images/points_02.webp" alt="クーポン01">
-                            </picture>
-                        </div>
-                        <p class="p-feature__txt">
-                            【クーポン番号】
-                        </p>
-                    </li>
-                    <li class="p-feature__item">
+            <p class="p-camp__txt">
+                クーポン番号を購入画面で入力、以下の特典が付与されます。<br />
+                大変お得なこの機会をぜひお見逃しなく！
+            </p>
 
-                        <div class="p-feature__img">
-                            <picture>
-                                <img src="./assets/images/points_01.webp" alt="クーポン02">
-                            </picture>
-                        </div>
-                        <p class="p-feature__txt">
-                            【クーポン番号】
-                        </p>
-                    </li>
+            <ul class="p-camp-cupon__list">
+                <li class="p-camp-cupon__item">
+                    <figure class="p-camp-cupon__img">
+                        <picture>
+                            <img src="./assets/images/points_02.webp" alt="クーポン01">
+                        </picture>
+                    </figure>
 
-                </ul>
-            <ul class="p-camp__list">
-                <li class="p-camp__item">
+                </li>
+                <li class="p-camp-cupon__item">
+
+                    <figure class="p-camp-cupon__img">
+                        <picture>
+                            <img src="./assets/images/points_01.webp" alt="クーポン02">
+                        </picture>
+                    </figure>
+
+                </li>
+
+            </ul>
+
+            <ul class="p-camp-cau__list">
+                <li class="p-camp-cau__item">
                     <dl>
                         <dt>
                             <span>開催期間</span>
@@ -795,7 +754,7 @@
                         <dd>4100年01月01日&nbsp;~&nbsp;4100年01月31日</dd>
                     </dl>
                 </li>
-                <li class="p-camp__item">
+                <li class="p-camp-cau__item">
                     <dl>
                         <dt>
                             <span>特典付与期間</span>
@@ -808,123 +767,15 @@
         </div>
     </section>
 
-    <section class="c-sec p-shop inview js-scroll--fadeUp">
-
-
-
-        <div class="c-sec__inner">
-
-            <div class="c-sec__ttl">
-                <h2>
-                    <img src="./assets/images/ttl_location.png" alt="開催場所">
-                </h2>
-                <p>
-                    開催場所
-                </p>
-            </div>
-
-            <!-- <a href="#" class="c-sec__caution">
-                <p>
-                    関東圏
-                </p>
-            </a> -->
-
-
-            <div class="p-shop__box">
-                <div class="p-shop__head">
-                    <img src="./assets/images/map.jpg" alt="" class="u-dp-pc--sm">
-                    <div class="p-shop__map">
-                        <iframe class="shop-item__map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.1314398171276!2d139.77088301545086!3d35.69838298019037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea7e2f93329%3A0x158f36257ff597b1!2z56eL6JGJ5Y6f6aeF!5e0!3m2!1sja!2sjp!4v1677552630454!5m2!1sja!2sjp"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                    </div>
-                </div>
-                <div class="p-shop__body">
-                    <h4 class="p-shop__heading">
-                        秋葉原○○カフェ
-                    </h4>
-
-                    <ul class="p-shop__list--sns">
-                        <li class="p-shop__item--sns">
-                            <a href="">
-                                <img src="./assets/images/twiiter.webp" alt="">
-                            </a>
-                        </li>
-                        <li class="p-shop__item--sns">
-                            <a href="">
-                                <img src="./assets/images/youtube.webp" alt="">
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="p-shop__list">
-                        <li class="p-shop__item">
-                            <dl>
-                                <dt>住所</dt>
-                                <dd>
-                                    <p>
-                                        〒120-0043
-                                        東京都千代田区神田0-0-0<br />秋葉原○○カフェ
-                                    </p>
-                                    <p>
-                                        秋葉原駅から徒歩5分
-                                    </p>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="p-shop__item">
-                            <dl>
-                                <dt>営業時間</dt>
-                                <dd>
-                                    <p>
-                                        11:00～19:30<br />
-                                        年末年始を除き無休
-                                    </p>
-
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="p-shop__item">
-                            <dl>
-                                <dt>お問合せ</dt>
-                                <dd>
-                                    <p>
-                                        TEL：00-0000-0000<br />
-                                        FAX：00-0000-0000<br />
-                                        MAIL：asdf123@gmail.com
-                                    </p>
-
-                                </dd>
-                            </dl>
-
-                        </li>
-                    </ul>
-                    <div class="c-sec__btn">
-                        <a href="#" class="">
-                            詳しくはこちら
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        </div>
-
-    </section>
-
     <section id="sns" class="c-sec p-sns inview js-scroll--fadeUp">
         <div class="c-sec__inner p-sns__inner">
-
             <div class="c-sec__ttl">
-                <h2>
-                    <img src="./assets/images/ttl_attention.png" alt="コラボカフェ諸注意">
-                </h2>
-                <p>
-                    コラボカフェ諸注意
-                </p>
+                <div class="c-sec__ttl">
+                    <h2><span class="inview js-scroll--slideView-delay">ATTENTION</span></h2>
+                    <p>諸注意</p>
+                </div>
             </div>
+
 
             <ul class="p-faq__list">
                 <li class="p-faq__item js-acc--content">
@@ -1054,13 +905,12 @@
 <!-- vendors -->
 <script src="./assets/scripts/vendors/jquery-3.6.0.min.js"></script>
 <script src="./assets/scripts/vendors/rellax.min.js"></script>
+<script src="./assets/scripts/vendors/jquery.magnific-popup.js"></script>
 <script src="./assets/scripts/vendors/lity.min.js"></script>
 <script src="./assets/scripts/vendors/jquery.matchHeight-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script src="./assets/scripts/vendors/intersection-observer.js"></script>
 <script src="./assets/scripts/vendors/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
 
 <script>

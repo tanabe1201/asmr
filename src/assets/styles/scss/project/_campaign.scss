@@ -2,125 +2,112 @@
 
 
 .p-camp {
-
     &__txt {
-        margin-top: 20px;
-        font-size: min(vw(10px,365),16px);
+        font-size: 2.8vw;
+        filter: $txt-shadow;
+
         @include mq-target(sm) {
-            font-size: vw(16px,1200);
-        }
-        
-        @include mq-target(lg) {
-            font-size: vw(18px,1920);
+            font-size: 16px;
+            // font-size: min(vwpc(14px), 16px);
         }
     }
 
 
-
-    &__img {
-        position: relative;
-        // width: vw(200px,365);
-        width: vw(200px,365);
-        margin: vw(40px,768) auto;
-        @include mq-target(sm) {
-            margin: vw(40px,1200) auto;
-            width: 28vw;
-        }
-
-        @include mq-target(lg) {
-            margin: vw(60px,1920) auto;
-            width: 20vw;
-        }
-
-        img {
-            // transform: rotate(-4deg);
-        }
-    }
-
-    &__box {
-        position: relative;
-        margin-top: vw(60px,768);
-        padding-top: vw(60px,768);
-        @include mq-target(sm) {
-            margin-top: vw(60px,1920);
-            padding-top: vw(60px,1920);
-        }
-
-        &::before {
-            content: "";
-            opacity: 0.25;
-            @include absAll;
-            height: 1px;
-            width: 100%;
-            background: $color-key-2;
-        }
-
-    }
-
-    &__list {
-        position: relative;
-        
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 1px;
-            background: $color-key-2;
-            width: 0;
-            opacity: 0.5;
-            transition: all 1s ease;
-            filter: drop-shadow(0 0 0.1115vw black);
-            transform: translateZ(0px);
-        }
-    }
-
-    &__item {
-        width: 100%;
-        margin-top: 10px;
-        @include flexCenter;
-        dl {
-            @include flex($align:center,$justify:center);
-            width: 100%;
-            margin: auto;
-            font-size: min(vw(10px,365),16px);
+    &-cupon {
+        &__list {
+            @include flex($align:center, $wrap:wrap, $justify:center);
+            margin: vwsp(20px) 0 vwsp(30px);
             @include mq-target(sm) {
-                font-size: vw(16px,1200);
-
+                margin-top: -10px;
+                margin: min(vwpc(24px), 40px) 0 min(vwpc(16px), 20px);
             }
-            @include mq-target(lg) {
-                font-size: vw(16px,1920);
+        }
 
+        &__item {
+            position: relative;
+            overflow: hidden;
+            // margin-top: 10px;
+            // width: min(vwsp(150px),240px);
+            margin: 10px auto 0;
+            width: 48%;
+            
+            @include mq-target(sm) {
+                width: 46.2%;
+                margin: 0 10px;
             }
+        }
 
-            dt {
-                margin-right: 2%;
-                width: vw(160px,768);
+        &__img {
+            position: relative;
+
+            &::after {
+                content: "";
+                @include absAll;
+                background: url(../../assets/images/cupon_frame.png) no-repeat 0 0/100%;
+                animation: cm_chara_2 6.5s infinite;
+            }
+        }
+
+        &__txt {
+            font-family: $line-r;
+            font-size: 28px;
+            font-size: vwsp(14px);
+            margin-top: 10px;
+
+            @include mq-target(sm) {
+                font-size: min(vwpc(20px), 28px);
+            }
+        }
+    }
+
+    &-cau {
+
+        &__list {
+            margin-top: vwsp(14px);
+            @include mq-target(sm) {
+                margin-top: 40px;
+            }
+        }
+        &__item {
+            width: 100%;
+            margin-top: vwsp(6px);
+            @include mq-target(sm) {
+                margin-top: 10px;
+            }
+            dl {
+                @include flex($align:center, $justify:center);
+                width: 100%;
+                margin: auto;
+                font-size: min(vw(10px, 365), 16px);
+
                 @include mq-target(sm) {
-                    width: vw(140px,1200);
+                    font-size: min(vwpc(12px),16px);
                 }
-
-                @include mq-target(lg) {
-                    width: vw(160px,1920);
-                }
-
-                span {
-                    width: 100%;
-                    display: inline-block;
-                    padding: vw(2px,768) vw(8px,768);
-                    border-radius: 20px;
-                    background: $color-red;
-                    color: $color-white;
+                dt {
+                    margin-right: 2%;
+                    width: vw(160px, 768);
 
                     @include mq-target(sm) {
-                        padding: vw(2px,1920) vw(8px,1920);
+                        width: min(vwpc(140px),160px);
+                    }
+
+
+                    span {
+                        width: 100%;
+                        display: inline-block;
+                        padding: vw(2px, 768) vw(8px, 768);
+                        border-radius: 20px;
+                        background: $color-red;
+                        color: $color-white;
+                        @include mq-target(sm) {
+                            padding: 2px 8px;
+                        }
                     }
                 }
-            }
 
-            dd {
-                text-align: left;
-                font-weight: 900;
+                dd {
+                    text-align: left;
+                }
             }
         }
     }

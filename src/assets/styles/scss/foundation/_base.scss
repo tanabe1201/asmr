@@ -2,50 +2,30 @@
 
 html {
 	height: -webkit-fill-available;
-    -webkit-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 	// font-size: 62.5%;
 }
 
 body {
 	position: relative;
-	font-weight: 500;
-    // font-size: 1.4rem;
+	// overflow: hidden;
+	-webkit-font-smoothing: antialiased;
 	text-align: center;
 	font-feature-settings: "palt";
-	height: 100%;
-	margin: 0;
+	min-height: -webkit-fill-available;
 	color: $color-white;
 	line-height: 1.6;
-	font-family: $shippo, Arial, sans-serif;
+	font-family: "yu-mincho-pr6n", sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.05em;
 	-webkit-text-size-adjust: 100%
 }
 
-* {
-	box-sizing: border-box
-}
 
 a {
 	text-decoration: none
 }
 
-// a:link {
-// 	color: #25a
-// }
-
-a:visited,
-a:hover,
-a:active {
-	// color: #71a
-}
-
-ul li {
-	list-style: none;
-}
-
-img {
-	width: 100%;
-	vertical-align: bottom
-}
 
 @font-face {
 	/*フォントの名前*/
@@ -102,4 +82,13 @@ img {
 
 .u-flexbox-wrap {
 	flex-wrap: wrap;
+}
+
+.u-font-large {
+	filter: drop-shadow(2px 2px 2px #000);
+}
+
+
+.mfp-bg, .mfp-wrap {
+    z-index: 60007;
 }

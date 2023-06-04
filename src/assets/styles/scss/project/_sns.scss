@@ -18,7 +18,7 @@
         width: min(vwsp(320px),700px);
         @include mq-target(sm) {
             margin-top: 2.57143vw;
-            width: min(vwpc(520px),600px);
+            width: min(vwpc(520px),560px);
         }
     }
 

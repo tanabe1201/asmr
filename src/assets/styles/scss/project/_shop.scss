@@ -13,7 +13,7 @@
 
         @include mq-target(sm) {
             margin: 0 4% 0 0;
-            width: 46%;
+            width: 48%;
         }
 
         img {
@@ -28,10 +28,10 @@
 
 
     &__map {
-        border: 3px solid $color-key-2;
+        border: 2px solid $color-key-2;
         position: relative;
         margin-top: 16px;
-        padding-top: 61.94332%;
+        padding-top: 46.94332%;
 
         .shop-item__map {
             @include absAll;
@@ -42,7 +42,7 @@
 
         &--sns {
             display: flex;
-            margin: min(vwsp(28px), 40px) 0;
+            margin: min(vwsp(24px), 30px) 0;
             @include mq(sm) {
                 justify-content: space-between;
             }
@@ -70,6 +70,7 @@
 
         dl {
             display: flex;
+            filter: drop-shadow(2px 2px 2px #000);
             font-size: min(vw(12px, 365), 18px);
 
             @include mq-target(sm) {
